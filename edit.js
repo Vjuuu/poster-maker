@@ -80,3 +80,21 @@ var templates = [
         });
     });
 });
+
+// Export Image Functionality
+document.getElementById('export-image').addEventListener('click', function() {
+  const format = 'png'; //document.getElementById('image-format').value; // 'png' or 'jpeg'
+  const scale = 4;  // parseInt(document.getElementById('image-scale').value); // scale factor for high quality
+
+  // Generate a data URL for the canvas
+  const dataURL = canvas.toDataURL({
+    format: format,
+    multiplier: scale // Multiplier for scaling the image (for high quality)
+  });
+
+  // Create a download link
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = `canvas-design.${format}`;
+  link.click();
+});
