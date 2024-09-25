@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer Management with Drag-and-Drop</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        #canvas-container {
+            margin-right: 20px;
+        }
+        #layer-panel {
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .layer-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .layer-item.active {
+            background-color: #d3d3d3;
+        }
+        .layer-item.dragging {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="600" style="border: 1px solid black;"></canvas>
+    </div>
+
+    <div id="layer-panel">
+        <h3>Layers</h3>
+        <div id="layers-list"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <script>
+        const canvas = new fabric.Canvas('canvas');
+        const layersList = document.getElementById('layers-list');
+        let draggedIndex = null;
+
+        // Create sample objects (layers)
+        const rect = new fabric.Rect({
+            left: 100,
+            top: 100,
+            fill: 'red',
+            width: 150,
+            height: 100,
+            id: 'rect'
+        });
+
+        const circle = new fabric.Circle({
+            left: 200,
+            top: 200,
+            radius: 50,
+            fill: 'blue',
+            id: 'circle'
+        });
+
+        const triangle = new fabric.Triangle({
+            left: 300,
+            top: 100,
+            width: 100,
+            height: 150,
+            fill: 'green',
+            id: 'triangle'
+        });
+
+        // Add objects to the canvas
+        canvas.add(rect, circle, triangle);
+
+        // Function to update the layer panel
+        function updateLayerPanel() {
+            layersList.innerHTML = ''; // Clear the layer panel
+
+            // Loop through the canvas objects and add them to the panel
+            canvas.getObjects().forEach((object, index) => {
+                const layerDiv = document.createElement('div');
+                layerDiv.classList.add('layer-item');
+                layerDiv.setAttribute('data-index', index);
+                layerDiv.setAttribute('draggable', 'true'); // Make layers draggable
+                layerDiv.innerHTML = `Layer ${index + 1} (${object.type})`;
+
+                // Highlight active object
+                if (canvas.getActiveObject() === object) {
+                    layerDiv.classList.add('active');
+                }
+
+                // Add event listeners for drag and drop
+                layerDiv.addEventListener('dragstart', handleDragStart);
+                layerDiv.addEventListener('dragover', handleDragOver);
+                layerDiv.addEventListener('drop', handleDrop);
+                layerDiv.addEventListener('dragend', handleDragEnd);
+
+                layersList.appendChild(layerDiv);
+            });
+        }
+
+        // Drag start event - track the index of the dragged layer
+        function handleDragStart(e) {
+            draggedIndex = parseInt(e.target.getAttribute('data-index'));
+            e.target.classList.add('dragging');
+        }
+
+        // Drag over event - prevent default behavior to allow dropping
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        // Drop event - handle the reordering of layers
+        function handleDrop(e) {
+            e.preventDefault();
+            const droppedIndex = parseInt(e.target.getAttribute('data-index'));
+
+            if (draggedIndex !== droppedIndex) {
+                // Rearrange the objects array based on drag-and-drop
+                const objects = canvas.getObjects();
+                const draggedObject = objects[draggedIndex];
+
+                // Remove dragged object from current position and insert it at the new position
+                objects.splice(draggedIndex, 1);
+                objects.splice(droppedIndex, 0, draggedObject);
+
+                // Clear and re-add objects in the new order
+                canvas.clear();
+                objects.forEach(obj => canvas.add(obj));
+
+                // Re-render the canvas and panel
+                canvas.renderAll();
+                updateLayerPanel();
+            }
+        }
+
+        // Drag end event - remove dragging class
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        // Update the layer panel when an object is selected, modified, added, or removed
+        canvas.on('selection:created', updateLayerPanel);
+        canvas.on('selection:updated', updateLayerPanel);
+        canvas.on('object:modified', updateLayerPanel);
+        canvas.on('object:added', updateLayerPanel);
+        canvas.on('object:removed', updateLayerPanel);
+
+        // Initial rendering of the layer panel
+        updateLayerPanel();
+
+    </script>
+</body>
+</html>
