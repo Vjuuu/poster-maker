@@ -56,10 +56,21 @@ function updateTextProperty(property, value) {
   }
 }
 
+// Load the selected font using WebFontLoader and apply it
 document.getElementById('font-select').addEventListener('change', function () {
-  updateTextProperty('fontFamily', this.value);
-});
+  var selectedFont = this.value;
 
+  // Load the selected font using WebFontLoader
+  WebFont.load({
+    google: {
+      families: [selectedFont] // Load the selected font from Google Fonts
+    },
+    active: function () {
+      // Apply the font to the active textbox
+      updateTextProperty('fontFamily', selectedFont);
+    }
+  });
+});
 document.getElementById('font-size').addEventListener('input', function () {
   updateTextProperty('fontSize', parseInt(this.value, 10));
 });
@@ -277,3 +288,18 @@ canvas.on('object:added', updateLayerPanel);
 
 // Clear selection when canvas is clicked
 canvas.on('selection:cleared', updateLayerPanel);
+
+
+document.getElementById('align-left').addEventListener('click',function()
+{
+  updateTextProperty('textAlign','left')
+});
+document.getElementById('align-center').addEventListener('click',function()
+{
+  updateTextProperty('textAlign','center')
+});
+document.getElementById('align-right').addEventListener('click',function()
+{
+  updateTextProperty('textAlign','right')
+});
+
