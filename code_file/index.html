@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canva Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Sidebar for tool options -->
+      <div class="mb-3">
+        <button class="btn btn-primary w-100" id="add-text">Add Text</button>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-success w-100" id="add-rect">Add Rectangle</button>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-warning w-100" id="add-circle">Add Circle</button>
+      </div>
+      <div class="mb-3">
+        <input type="file" id="upload-image" class="form-control" accept="image/*">
+      </div>
+
+      <div class="mt-4">
+        <h5>Export & Save</h5>
+        <div class="mb-3">
+          <label for="image-format" class="form-label">Image Format</label>
+          <select id="image-format" class="form-select">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="image-scale" class="form-label">Image Scale (1 to 4)</label>
+          <input type="number" id="image-scale" class="form-control" value="1" min="1" max="4">
+        </div>
+        <button class="btn btn-success w-100" id="export-image">Export as Image</button>
+      </div>
+
+      <div class="mt-4">
+        <button class="btn btn-info w-100" id="save-json">Save Design</button>
+      </div>
+      <div class="mt-2">
+        <input type="file" id="load-json" class="form-control" accept="application/json">
+        <button class="btn btn-secondary w-100 mt-2" id="load-design">Load Design</button>
+      </div>
+      
+
+      <!-- Object customization options -->
+      <div class="mt-4">
+        <h5>Object Properties</h5>
+        <!-- Color Picker -->
+        <div class="mb-3">
+          <label for="object-color" class="form-label">Color</label>
+          <input type="color" id="object-color" class="form-control">
+        </div>
+
+        <!-- Font Selection (for text) -->
+        <div class="mb-3">
+          <label for="font-select" class="form-label">Font</label>
+          <select id="font-select" class="form-select">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+          </select>
+        </div>
+
+        <!-- Font Size -->
+        <div class="mb-3">
+          <label for="font-size" class="form-label">Font Size</label>
+          <input type="number" id="font-size" class="form-control" value="24">
+        </div>
+
+        <!-- Text Alignment -->
+        <h5>Text Alignment</h5>
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-outline-secondary" id="align-left">Left</button>
+          <button class="btn btn-outline-secondary" id="align-center">Center</button>
+          <button class="btn btn-outline-secondary" id="align-right">Right</button>
+        </div>
+
+        <!-- Z-Index Control -->
+        <h5>Z-Index Control</h5>
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-outline-info" id="bring-forward">Bring Forward</button>
+          <button class="btn btn-outline-info" id="send-backward">Send Backward</button>
+        </div>
+
+        <!-- Opacity Slider -->
+        <h5>Opacity</h5>
+        <div class="mb-3">
+          <input type="range" id="object-opacity" class="form-range" min="0" max="1" step="0.1" value="1">
+        </div>
+
+        <!-- Rotation Slider -->
+        <h5>Rotation</h5>
+        <div class="mb-3">
+          <input type="range" id="object-rotation" class="form-range" min="0" max="360" step="1" value="0">
+        </div>
+
+        <!-- Delete Object -->
+        <button class="btn btn-danger w-100" id="delete-object">Delete Object</button>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <!-- Main canvas area -->
+      <canvas id="canvas" width="400" height="400" style="border:1px solid #ccc"></canvas>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.js"
+integrity="sha512-hOJ0mwaJavqi11j0XoBN1PtOJ3ykPdP6lp9n29WVVVVZxgx9LO7kMwyyhaznGJ+kbZrDN1jFZMt2G9bxkOHWFQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+</body>
+</html>
