@@ -62,3 +62,25 @@
 {
   cursor: pointer;
 }
+
+
+#layer-list .layer-item {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+#layer-list .selected-layer {
+  background-color: #ddd !important;
+  color: #111111 !important;
+}
+.drag-over {
+ opacity: 0.8;
+}
+
+/* edit pabel  */
+.tab-pane 
+{
+   height: 100vh;
+   overflow-y: scroll;
+}
