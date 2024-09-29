@@ -12,7 +12,7 @@ $(document).ready(function()
         $('#posterPreview').attr('src', imgSrc);
         
         // Set the download link and file name
-        const base_url = 'https://yourdomain.com/'; // Change this to your base URL
+        const base_url = 'https://status247.netlify.app/mobile-layout/'; // Change this to your base URL
         $('#btnPosterDownload').attr('download', imgSrc.split('/').pop());
         $('#btnPosterDownload').attr('href', base_url + imgSrc);
 
