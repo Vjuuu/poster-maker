@@ -1,13 +1,13 @@
-// $(document).ready(function () {
-//     // Show loader when the page starts loading
-//     $('#loader-wrapper').show();
-//     // Hide loader and show content when page is fully loaded
-//     $(window).on('load', function () {
-//         $('#loader-wrapper').fadeOut('slow', function () {
-//             $('#content').fadeIn('slow');
-//         });
-//     });
-// });
+$(document).ready(function () {
+    // Show loader when the page starts loading
+    $('#loader-wrapper').show();
+    // Hide loader and show content when page is fully loaded
+    $(window).on('load', function () {
+        $('#loader-wrapper').fadeOut('slow', function () {
+            $('#content').fadeIn('slow');
+        });
+    });
+});
 
 $(document).ready(function () {
     const base_url = 'file:///C:/local-project/poster-maker/mobile-layout';
