@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Template App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="index.css" rel="stylesheet">
+
+</head>
+
+<body class="text-white" style="background-color: #141414 !important;">
+    <!-- <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div> -->
+    <div class="container-fluid p-0 ">
+        <header class="p-3 px-4 text-white d-flex gap-4 align-items-center">
+            <a href="index.html" class="text-white"><i class="fa-solid fa-arrow-left"></i></a>
+            <h2 class="mb-0">Status247</h2>
+        </header>
+        <div class="row row-cols-2 g-3  p-3" style="margin-bottom: 100px;">
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/2.png" class="card-img-top btn-poster" alt="Template 1">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/3.png" class="card-img-top btn-poster" alt="Template 2">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/4.png" class="card-img-top btn-poster" alt="Template 3">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/5.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/6.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/7.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/8.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/9.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/10.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-dark text-white">
+                    <img src="assets/posters/dasera/2.png" class="card-img-top btn-poster" alt="Template 4">
+                    <div class="card-body">
+                        <p class="card-text">Dashehra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <nav class="navbar fixed-bottom navbar-light" style="background-color: #1C1C1E;">
+            <div class="container-fluid justify-content-around">
+                <a class="nav-link d-flex flex-column align-items-center" href="#"><i class="fas fa-home mb-1"></i><span
+                        class="small">Home</span></a>
+                <a class="nav-link d-flex flex-column align-items-center" href="#"><i
+                        class="fas fa-search mb-1"></i><span class="small">Search</span></a>
+                <a class="nav-link d-flex flex-column align-items-center" href="#"><i
+                        class="fas fa-plus-circle mb-1"></i><span class="small">Create</span></a>
+                <a class="nav-link d-flex flex-column align-items-center" href="#"><i
+                        class="fas fa-heart mb-1"></i><span class="small">Favorites</span></a>
+                <a class="nav-link d-flex flex-column align-items-center" href="#"><i class="fas fa-user mb-1"></i><span
+                        class="small">Profile</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="loadPoster" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="" id="posterPreview" class="img-fluid rounded mb-3">
+                    <!-- <h3 class="modal-title mb-3">Gandhi Jayanti</h3> -->
+                    <a href="" download="" id="btnPosterDownload" class="btn btn-primary w-100 rounded mb-4"><i
+                            class="fa-solid fa-download me-2"></i>Download</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

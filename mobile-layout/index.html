@@ -7,10 +7,15 @@
     <title>Poster Template App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="index.css" rel="stylesheet">
+
 </head>
 
 <body class="text-white" style="background-color: #141414 !important;">
+    <!-- <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div> -->
     <div class="container-fluid p-0 ">
         <header class="p-3 text-white">
             <h2 class="mb-0">Status247</h2>
@@ -45,42 +50,85 @@
 
         <div class="tab-content p-3" id="myTabContent">
             <div class="tab-pane fade show active" id="trending" role="tabpanel" aria-labelledby="trending-tab">
-                <div class="row row-cols-2 g-3 mb-4">
-                    <div class="col">
-                        <div class="card h-100 bg-dark text-white">
-                            <img src="assets/posters/gandhiJayanti/2.png" class="card-img-top btn-poster"
-                                alt="Template 1">
-                            <div class="card-body">
-                                <p class="card-text">Gandhi jayanti</p>
+                <div class="mb-3">
+                    <label for="" class="mb-3">Gandhi Jayanti</label>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/gandhiJayanti/2.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/gandhiJayanti/3.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/gandhiJayanti/4.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/gandhiJayanti/5.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="gandhi_jayanti.html" class="">
+                                    <div class="card bg-light d-flex justify-content-center align-items-center"
+                                        style="height: 150px !important;">
+                                        <p>View More</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+                        <!-- <div class="swiper-pagination"></div> -->
                     </div>
-                    <div class="col">
-                        <div class="card h-100 bg-dark text-white">
-                            <img src="assets/posters/gandhiJayanti/3.png" class="card-img-top btn-poster"
-                                alt="Template 2">
-                            <div class="card-body">
-                                <p class="card-text">Gandhi jayanti</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="mb-3">Dashehra</label>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/dasera/1 (1).png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/dasera/2.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/dasera/3.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card h-100 bg-dark text-white">
+                                    <img src="assets/posters/dasera/4.png" class="card-img-top btn-poster"
+                                        alt="Template 1">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="dashehra.html" class="">
+                                    <div class="card bg-light d-flex justify-content-center align-items-center"
+                                        style="height: 150px !important;">
+                                        <p>View More</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 bg-dark text-white">
-                            <img src="assets/posters/gandhiJayanti/4.png" class="card-img-top btn-poster"
-                                alt="Template 3">
-                            <div class="card-body">
-                                <p class="card-text">Gandhi jayanti</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 bg-dark text-white">
-                            <img src="assets/posters/gandhiJayanti/5.png" class="card-img-top btn-poster"
-                                alt="Template 4">
-                            <div class="card-body">
-                                <p class="card-text">Gandhi jayanti</p>
-                            </div>
-                        </div>
+                        <!-- <div class="swiper-pagination"></div> -->
                     </div>
                 </div>
             </div>
@@ -133,14 +181,16 @@
         <div class="modal-dialog">
             <div class="modal-content bg-dark">
                 <div class="modal-header">
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   <img src="" alt="" id="posterPreview" class="img-fluid rounded mb-3">
-                   <h3 class="modal-title mb-3">Gandhi Jayanti</h3>
-                   <a href="" download="" id="btnPosterDownload"class="btn btn-primary w-100 rounded mb-4"><i class="fa-solid fa-download me-2"></i>Download</a>
+                    <img src="" alt="" id="posterPreview" class="img-fluid rounded mb-3">
+                    <!-- <h3 class="modal-title mb-3">Gandhi Jayanti</h3> -->
+                    <a href="" download="" id="btnPosterDownload" class="btn btn-primary w-100 rounded mb-4"><i
+                            class="fa-solid fa-download me-2"></i>Download</a>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -149,7 +199,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="index.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.5,
+            centeredSlides: false,
+            spaceBetween: 30,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 
 </html>
