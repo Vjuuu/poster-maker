@@ -15,7 +15,7 @@ $(document).ready(function () {
     $('.btn-poster').on('click', function () {
         const imgSrc = $(this).attr('src');
         // Show the modal
-        // $('#loadPoster').modal('show');
+        $('#loadPoster').modal('show');
 
         // Set the image source in the modal preview
         $('#posterPreview').attr('src', imgSrc);
