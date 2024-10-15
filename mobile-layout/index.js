@@ -1,13 +1,13 @@
-$(document).ready(function () {
-    // Show loader when the page starts loading
-    $('#loader-wrapper').show();
-    // Hide loader and show content when page is fully loaded
-    $(window).on('load', function () {
-        $('#loader-wrapper').fadeOut('slow', function () {
-            $('#content').fadeIn('slow');
-        });
-    });
-});
+// $(document).ready(function () {
+//     // Show loader when the page starts loading
+//     $('#loader-wrapper').show();
+//     // Hide loader and show content when page is fully loaded
+//     $(window).on('load', function () {
+//         $('#loader-wrapper').fadeOut('slow', function () {
+//             $('#content').fadeIn('slow');
+//         });
+//     });
+// });
 
 $(document).ready(function () {
     const base_url = 'file:///C:/local-project/poster-maker/mobile-layout';
@@ -15,7 +15,7 @@ $(document).ready(function () {
     $('.btn-poster').on('click', function () {
         const imgSrc = $(this).attr('src');
         // Show the modal
-        $('#loadPoster').modal('show');
+        // $('#loadPoster').modal('show');
 
         // Set the image source in the modal preview
         $('#posterPreview').attr('src', imgSrc);
